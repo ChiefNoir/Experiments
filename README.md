@@ -1,2 +1,2 @@
 # Prove
-Random thing for here and there
+Random things for here and there
