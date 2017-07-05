@@ -39,8 +39,8 @@ namespace GkMic.ViewModel
             }
 
             SimpleIoc.Default.Register<MainViewModel>();
-
             SimpleIoc.Default.Register<BirthCertificateViewModel>();
+            SimpleIoc.Default.Register<PassportViewModel>();
         }
 
         /// <summary>
@@ -65,6 +65,17 @@ namespace GkMic.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<BirthCertificateViewModel>();
+            }
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+"CA1822:MarkMembersAsStatic",
+Justification = "This non-static member is needed for data binding purposes.")]
+        public PassportViewModel PassportViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PassportViewModel>();
             }
         }
 

@@ -74,11 +74,15 @@
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
+    <Compile Include="ViewModel\PassportViewModel.cs" />
     <Compile Include="ViewModel\BirthCertificateViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\BirthCertificateView.xaml.cs">
       <DependentUpon>BirthCertificateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PassportView.xaml.cs">
+      <DependentUpon>PassportView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +101,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\BirthCertificateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PassportView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,7 +6,7 @@
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:View="clr-namespace:GkMic.View" x:Class="GkMic.MainWindow"
         mc:Ignorable="d ignore"
-        Height="354.735"
+        Height="429.135"
         Width="697.591"
         Title="MVVM Light Application"
         >

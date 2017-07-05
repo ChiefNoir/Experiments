@@ -61,6 +61,24 @@ namespace GkMic.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Код подразделения.
+        /// </summary>
+        public static string CodePassport {
+            get {
+                return ResourceManager.GetString("CodePassport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата выдачи.
+        /// </summary>
+        public static string DatePassport {
+            get {
+                return ResourceManager.GetString("DatePassport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Фамилия.
         /// </summary>
         public static string FamilyName {
@@ -84,6 +102,15 @@ namespace GkMic.Properties {
         public static string NumberBirthCertificate {
             get {
                 return ResourceManager.GetString("NumberBirthCertificate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Серия и номер.
+        /// </summary>
+        public static string NumberPassport {
+            get {
+                return ResourceManager.GetString("NumberPassport", resourceCulture);
             }
         }
         

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CodePassport" xml:space="preserve">
+    <value>Код подразделения</value>
+  </data>
+  <data name="DatePassport" xml:space="preserve">
+    <value>Дата выдачи</value>
+  </data>
   <data name="FamilyName" xml:space="preserve">
     <value>Фамилия</value>
   </data>
@@ -125,6 +131,9 @@
   </data>
   <data name="NumberBirthCertificate" xml:space="preserve">
     <value>Номер документа</value>
+  </data>
+  <data name="NumberPassport" xml:space="preserve">
+    <value>Серия и номер</value>
   </data>
   <data name="Organisation" xml:space="preserve">
     <value>Кем выдан</value>
