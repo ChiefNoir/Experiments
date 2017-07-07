@@ -10,7 +10,10 @@ namespace GkMic.View
     {
         public Task ShowError(Exception error, string title, string buttonText, Action afterHideCallback)
         {
-            MessageBox.Show(error.InnerException.InnerException.Message, title);
+            Exception e = error;
+            while (e.InnerException != null) { e = e.InnerException; }
+
+            MessageBox.Show(e.Message, title);
             return Task.FromResult(0);
         }
 

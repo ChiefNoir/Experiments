@@ -1,13 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataModel
 {
     public class BirthCertificate
     {
+        //TODO: need some research for birth certificate restrictions
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Number { get; set; }
+        public string Number { get; set; } 
 
         public string Name { get; set; }
         public string FamilyName { get; set; }
