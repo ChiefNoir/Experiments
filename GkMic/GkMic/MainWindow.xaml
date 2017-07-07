@@ -8,14 +8,23 @@
         xmlns:Converters="clr-namespace:GkMic.Converters"
         xmlns:Extensions="clr-namespace:GkMic.Extensions"
         xmlns:common="clr-namespace:GkMic.Common"
+    xmlns:TemplateSelectors="clr-namespace:GkMic.View.Templates"
         mc:Ignorable="d ignore"
-        Height="429.135"
-        Width="697.591"
+        Height="600"
+        Width="900"
         Title="MVVM Light Application">
 
     <Window.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/GkMic;component/View/Templates/DocumentTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
             <Converters:DocumentTypeToLocalizedStringConverter x:Key="DocumentTypeToLocalizedStringConverter"/>
+
+            <TemplateSelectors:DocumentTypeTemplateSelector x:Key="DocumentTypeTemplateSelector"
+                                                            Passport="{StaticResource PassportTemplate}"
+                                                            BirthCertificate="{StaticResource BirthCertificateTemplate}"/>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -38,6 +47,9 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ContentControl Content="{Binding ContentControlView}" Grid.Column="1" Margin="10.2,10,10.2,10.2"/>
+
+        <ContentControl Content="{Binding SelectedDocumentType}" 
+                        ContentTemplateSelector="{StaticResource DocumentTypeTemplateSelector}"
+                        Grid.Column="1" Margin="10,10,10.2,10.2"/>
     </Grid>
 </Window>

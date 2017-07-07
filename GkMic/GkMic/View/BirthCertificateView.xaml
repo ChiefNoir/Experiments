@@ -6,7 +6,7 @@
              xmlns:prop="clr-namespace:GkMic.Properties"
              xmlns:local="clr-namespace:GkMic.View"
              mc:Ignorable="d" 
-             DataContext="{Binding BirthCertificateViewModel, Source={StaticResource Locator}}" d:DesignWidth="300" Height="306.4">
+             DataContext="{Binding BirthCertificateViewModel, Source={StaticResource Locator}}" d:DesignWidth="300" d:DesignHeight="306.4">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -27,7 +27,7 @@
         <TextBox Grid.Column="1" Height="23" Margin="9.6,110,10,0" TextWrapping="Wrap" Text="{Binding Path=BirthCertificate.Patronymic}" VerticalAlignment="Top"/>
 
         <TextBlock Margin="10,150,10,0" TextWrapping="Wrap" Text="{x:Static prop:Resources.Organisation}" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" Margin="9.6,149,10,65.4" TextWrapping="Wrap" Text="{Binding Path=BirthCertificate.Organisation}" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Grid.Column="1" Margin="9.6,149,10,0" TextWrapping="Wrap" Text="{Binding Path=BirthCertificate.Organisation}" VerticalScrollBarVisibility="Auto" Height="92" VerticalAlignment="Top"/>
 
         <Button Command="{Binding SaveCommand}" Content="{x:Static prop:Resources.Save}" Margin="0,0,10,10" Grid.Column="1" Height="19" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
 
