@@ -126,8 +126,14 @@
   <data name="DatePassport" xml:space="preserve">
     <value>Дата выдачи</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
   <data name="FamilyName" xml:space="preserve">
     <value>Фамилия</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Информация</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Имя</value>
@@ -149,5 +155,8 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
+  </data>
+  <data name="SaveComplete" xml:space="preserve">
+    <value>Сохранение завершено</value>
   </data>
 </root>

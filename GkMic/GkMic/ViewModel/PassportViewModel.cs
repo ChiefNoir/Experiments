@@ -2,23 +2,45 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows.Input;
-using System;
 using Contracts;
+using GalaSoft.MvvmLight.Views;
+using GkMic.Properties;
 
 namespace GkMic.ViewModel
 {
     public class PassportViewModel : ViewModelBase
     {
-        public Passport Passport { get; set; }
-        public ICommand SaveCommand { get; set; }
-
         private IDataService _dataSevice;
-
-        public PassportViewModel(IDataService dataSevice)
+        private IDialogService _dialogService;
+        private ICommand _saveCommand;
+        private Passport _passport = new Passport();
+        
+        public Passport Passport
         {
-            Passport = new Passport();
+            get
+            {
+                return _passport;
+            }
+            set
+            {
+                Set(ref _passport, value);
+            }
+        }        
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if(_saveCommand == null)
+                    _saveCommand = new RelayCommand(Save);
+
+                return _saveCommand;
+            }
+        }
+        
+        public PassportViewModel(IDataService dataSevice, IDialogService dialogService)
+        {
             _dataSevice = dataSevice;
-            SaveCommand = new RelayCommand(Save);            
+            _dialogService = dialogService;
         }
 
         private void Save()
@@ -27,9 +49,13 @@ namespace GkMic.ViewModel
             {
                 if (error != null)
                 {
-                    // Report error here
+                    _dialogService.ShowError(error, Resources.Error, null, null);
                     return;
                 }
+
+                Passport = new Passport();
+                _dialogService.ShowMessage(Resources.SaveComplete, Resources.Info);
+                return;
             });
         }
     }
