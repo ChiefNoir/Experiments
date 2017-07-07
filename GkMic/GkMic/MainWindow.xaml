@@ -15,10 +15,6 @@
 
     <Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-
             <Converters:DocumentTypeToLocalizedStringConverter x:Key="DocumentTypeToLocalizedStringConverter"/>
         </ResourceDictionary>
     </Window.Resources>

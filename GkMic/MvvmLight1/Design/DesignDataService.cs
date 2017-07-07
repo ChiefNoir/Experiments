@@ -1,7 +1,7 @@
 ﻿using System;
-using GkMic.Model;
+using MvvmLight1.Model;
 
-namespace GkMic.Design
+namespace MvvmLight1.Design
 {
     public class DesignDataService : IDataService
     {
