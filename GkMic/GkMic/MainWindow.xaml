@@ -4,18 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
-        xmlns:View="clr-namespace:GkMic.View" x:Class="GkMic.MainWindow"
+        x:Class="GkMic.MainWindow"
+        xmlns:Converters="clr-namespace:GkMic.Converters"
+        xmlns:Extensions="clr-namespace:GkMic.Extensions"
+        xmlns:common="clr-namespace:GkMic.Common"
         mc:Ignorable="d ignore"
         Height="429.135"
         Width="697.591"
-        Title="MVVM Light Application"
-        >
+        Title="MVVM Light Application">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Skins/MainSkin.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <Converters:DocumentTypeToLocalizedStringConverter x:Key="DocumentTypeToLocalizedStringConverter"/>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -23,5 +27,21 @@
         <Binding Path="Main" Source="{StaticResource Locator}"/>
     </Window.DataContext>
 
-    <Grid x:Name="LayoutRoot"/>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Margin="10,10,9.8,0" VerticalAlignment="Top"
+                  ItemsSource="{Binding Source={Extensions:EnumBindingSource {x:Type common:DocumentType}}}"
+                  SelectedItem="{Binding SelectedDocumentType}" Height="22"
+                  >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource DocumentTypeToLocalizedStringConverter}}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ContentControl Content="{Binding ContentControlView}" Grid.Column="1" Margin="10.2,10,10.2,10.2"/>
+    </Grid>
 </Window>

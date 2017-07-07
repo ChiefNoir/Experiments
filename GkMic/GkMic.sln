@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{EC5CDB24-3EC7-4887-8040-7A0BEAC56BE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight1", "MvvmLight1\MvvmLight1.csproj", "{8DB9D08D-EE01-476F-9453-914C15D10499}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{EC5CDB24-3EC7-4887-8040-7A0BEAC56BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC5CDB24-3EC7-4887-8040-7A0BEAC56BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC5CDB24-3EC7-4887-8040-7A0BEAC56BE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DB9D08D-EE01-476F-9453-914C15D10499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DB9D08D-EE01-476F-9453-914C15D10499}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DB9D08D-EE01-476F-9453-914C15D10499}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DB9D08D-EE01-476F-9453-914C15D10499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

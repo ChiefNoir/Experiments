@@ -1,65 +1,55 @@
 ﻿using GalaSoft.MvvmLight;
-using GkMic.Model;
+using GkMic.Common;
+using GkMic.View;
+using System;
+using System.Windows;
 
 namespace GkMic.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// See http://www.mvvmlight.net
-    /// </para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private readonly IDataService _dataService;
-
-        /// <summary>
-        /// The <see cref="WelcomeTitle" /> property's name.
-        /// </summary>
-        public const string WelcomeTitlePropertyName = "WelcomeTitle";
-
-        private string _welcomeTitle = string.Empty;
-
-        /// <summary>
-        /// Gets the WelcomeTitle property.
-        /// Changes to that property's value raise the PropertyChanged event. 
-        /// </summary>
-        public string WelcomeTitle
+        private DocumentType _selectedDocumentType;
+        public DocumentType SelectedDocumentType
         {
             get
             {
-                return _welcomeTitle;
+                return _selectedDocumentType;
             }
             set
             {
-                Set(ref _welcomeTitle, value);
+                Set(ref _selectedDocumentType, value);
+                SwitchView(value);
             }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
-        public MainViewModel(IDataService dataService)
+        private FrameworkElement _contentControlView;
+        public FrameworkElement ContentControlView
         {
-            _dataService = dataService;
-            _dataService.GetData(
-                (item, error) =>
-                {
-                    if (error != null)
-                    {
-                        // Report error here
-                        return;
-                    }
-
-                    WelcomeTitle = item.Title;
-                });
+            get { return _contentControlView; }
+            set
+            {
+                Set(ref _contentControlView, value);                
+            }
         }
 
-        ////public override void Cleanup()
-        ////{
-        ////    // Clean up if needed
+        public MainViewModel()
+        {
+            SelectedDocumentType = DocumentType.Passport;
+        }
 
-        ////    base.Cleanup();
-        ////}
+        private void SwitchView(DocumentType doctype)
+        {
+            switch (doctype)
+            {
+                case DocumentType.BirthCertificate:
+                    ContentControlView = new BirthCertificateView();
+                    break;
+                case DocumentType.Passport:
+                    ContentControlView = new PassportView();
+                    break;
+                default:
+                    throw new Exception($"{doctype} is unknown DocumentType.");
+            }            
+        }
     }
 }
